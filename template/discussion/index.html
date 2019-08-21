@@ -1,0 +1,108 @@
+{% extends "discussion/base.html" %}
+{% load humanize %}
+{% block content %}
+
+<div class="container-fluid page__container">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="#" class="btn btn-dark mb-3 btn-block">Create Post
+                <i class="material-icons">forum</i>
+            </a>
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <a href="#" class="text-white">All Threads</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">My Posts</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Friends Post</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">My Groups</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Unresolved</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex mb-3">
+                <div class="form-inline">
+                    <div class="search-form search-form--light">
+                        <input type="text" class="form-control" placeholder="Search ..." id="searchSample03">
+                        <button class="btn" type="button">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="ml-auto d-flex">
+                    <div class="form-group form-inline mb-0">
+                        <label for="sort" class="mr-2">Sort by</label>
+                        <select class="form-control" id="sort">
+                            <option value="">Newest</option>
+                            <option value="">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            {% if articles %}
+
+            {% for article in articles %}
+            <div class="stories-cards mb-4">
+                <div class="card">
+                    <div class="d-flex align-items-center flex-wrap">
+                        <div class="m-3 avatar avatar-sm">
+                        </div>
+                        <div class="stories-card__title flex">
+                            <h5 class="card-title m-0"><a href="{% url 'article:detail' article.id %}"
+                                    class="text-body">{{article.title}}</a></h5>
+                            <small class="text-muted"><a href="#"><strong>{{user.username}} </strong></a> asked
+                                {{article.created_date|naturaltime}}</small>
+                        </div>
+
+                        <div class="ml-auto">
+                            <div class="badge badge-soft-vuejs badge-pill mr-3">{{ article.topic }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+
+            <div class="row">
+                <div class="col-md-10 offset-md-3">
+                    <div class="col-lg-8">
+                        <div class="alert alert-danger">
+                            No Articles Found
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+
+            <div class="d-flex flex-row align-items-center mb-3">
+                <div class="form-inline">
+                    View
+
+                    <select class="custom-select ml-2">
+                        <option value="20" selected="">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                    </select>
+                </div>
+                <div class="ml-auto">
+                    20
+                    <span class="text-muted">of 100</span>
+                    <a href="#" class="icon-muted">
+                        <i class="material-icons float-right">arrow_forward</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

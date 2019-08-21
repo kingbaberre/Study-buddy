@@ -1,0 +1,42 @@
+{% extends "registration/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid page__container page__heading d-flex align-items-center border-bottom  ">
+  <h1 class="mb-0">My Account</h1>
+</div>
+
+<div class="container-fluid page__container">
+  <div class="card card-form">
+      <div class="row no-gutters">
+          <div class="col-lg-4 card-body">
+              <p><strong class="headings-color">Basic Information</strong></p>
+              <p class="text-muted mb-0">Edit your account details and settings.</p>
+          </div>
+          <div class="col-lg-8 card-form__body card-body">
+              <div class="row">
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  {{ u_form|crispy }}
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="card card-form">
+      <div class="row no-gutters">
+          <div class="col-lg-4 card-body">
+              <p><strong class="headings-color">Profile Update</strong></p>
+              <p class="text-muted mb-0">Change your password.</p>
+          </div>
+          <div class="col-lg-8 card-form__body card-body">
+              <div class="row">
+                  <div class="col-md-6">
+                  {{ p_form|crispy }}
+                  </div>
+              </div>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock content %}

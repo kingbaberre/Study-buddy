@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="mdk-header-layout__content mdk-header-layout__content--fullbleed mdk-header-layout__content--scrollable page" style="padding-top: 60px;">
+  <div class="container-fluid page__container page__heading d-flex align-items-center border-bottom  ">
+    <h2>{{ quiz.title }}</h2>
+  </div>
+<div class="container-fluid page__container">
+<h3>{% trans "Category" %}: {{ quiz.category }}</h3>
+{% if quiz.single_attempt %}
+  <h4>{% trans "You will only get one attempt at this quiz" %}.</h4>
+{% endif %}
+<p>{{ quiz.description }}</p>
+<p>
+  <a href="{% url 'quiz_question' quiz_name=quiz.url %}" class="btn btn-success">
+	{% trans "Start quiz" %}
+  </a>
+</p>
+</div>
+</div>
+{% endblock %}

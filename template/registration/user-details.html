@@ -1,0 +1,47 @@
+{% extends 'registration/base.html'%}
+{% block content %}
+<div class="container-fluid page__container page__heading border-bottom">
+    <h1 class="mb-0">{{myprofile}} <small>Profile</small></h1>
+    <div class="float-right">
+        <button type="button" class="btn btn-success">
+            <i class="material-icons mr-1">add</i> Connect
+        </button>
+    </div>
+</div>
+    
+<div class="container-fluid page__container">
+    <div class="card card-form">
+        <div class="row no-gutters">
+            <div class="col-lg-4 card-body">
+                <p><strong class="headings-color">Basic Information</strong></p>
+                <p class="text-muted mb-0">Edit your account details and settings.</p>
+            </div>
+            <div class="col-lg-8 card-form__body card-body">
+                <p>Username: {{myprofile.username}}</p>
+                <p>First name: {{myprofile.first_name}}</p>
+                <p>Username: {{myprofile.last_name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-form">
+        <div class="row no-gutters">
+            <div class="col-lg-4 card-body">
+                <p><strong class="headings-color">Course Details</strong></p>
+                <p class="text-muted mb-0">Course and Examinations.</p>
+            </div>
+            <div class="col-lg-8 card-form__body card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Course: {{ myprofile.profile.mycourse }}</p>
+                        <p>Location: {{ myprofile.profile.location }}</p>
+                        <p>Country: {{ myprofile.profile.country }}</p>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

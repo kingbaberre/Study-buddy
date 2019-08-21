@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{%load static%}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png'%}">
+    <title>Study Buddy</title>
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <!-- Simplebar -->
+    <link type="text/css" href="{% static 'assets/vendor/simplebar.min.css'%}" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="{% static 'assets/css/app.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/app.rtl.css'%}" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.rtl.css'%}" rel="stylesheet">
+
+    <!-- Font Awesome FREE Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.rtl.css'%}" rel="stylesheet">
+
+    <!-- ion Range Slider -->
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.rtl.css'%}" rel="stylesheet">
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '340571383230227');
+  fbq('track', 'PageView');
+</script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=340571383230227&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body class="layout-default has-drawer-opened">
+{% block content %}
+
+{% endblock %}
+    <!-- jQuery -->
+    <script src="{% static 'assets/vendor/jquery.min.js'%}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/vendor/popper.min.js'%}"></script>
+    <script src="{% static 'assets/vendor/bootstrap.min.js'%}"></script>
+
+    <!-- Simplebar -->
+    <script src="{% static 'assets/vendor/simplebar.min.js'%}"></script>
+
+    <!-- DOM Factory -->
+    <script src="{% static 'assets/vendor/dom-factory.js'%}"></script>
+
+    <!-- MDK -->
+    <script src="{% static 'assets/vendor/material-design-kit.js'%}"></script>
+
+    <!-- Range Slider -->
+    <script src="{% static 'assets/vendor/ion.rangeSlider.min.js'%}"></script>
+    <script src="{% static 'assets/js/ion-rangeslider.js'%}"></script>
+
+    <!-- App -->
+    <script src="{% static 'assets/js/toggle-check-all.js'%}"></script>
+    <script src="{% static 'assets/js/check-selected-row.js'%}"></script>
+    <script src="{% static 'assets/js/dropdown.js'%}"></script>
+    <script src="{% static 'assets/js/sidebar-mini.js'%}"></script>
+    <script src="{% static 'assets/js/app.js'%}"></script>
+
+
+</body>
+</html>

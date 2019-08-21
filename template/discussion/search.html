@@ -1,0 +1,25 @@
+{% extends "discussion/base.html" %}
+{% block content %}
+<div class="container-fluid page__container">
+    <h1 class="mb-0">Friends Search Results</h1>
+    {% for search in object_list %}
+    <div class="row">
+        <div class="col-md-6 col-offset-md-3">
+            <div class="list-group list-group-flush">
+                <div class="list-group-item d-flex media align-items-center">
+                    <a href="#" class="avatar avatar-sm media-left mr-3">
+                        <img src="{{ search.profile.image.url }}" alt="Avatar"
+                            class="avatar-img rounded-circle">
+                    </a>
+                    <div class="media-body">
+                        <p class="m-0">
+                            <a href="{% url 'myprofile' search.id %}" class="text-body"><strong>{{ search.username }} {{search.first_name}}</strong></a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

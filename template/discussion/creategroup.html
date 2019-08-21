@@ -1,0 +1,37 @@
+{% extends 'discussion/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid page__container">
+    <h1 class="mb-4">Create Group</h1>
+    <div class="row">
+        <form action="" method="POST" class="form-inline">
+            {{form.name|as_crispy_field}}{% csrf_token %}
+            <input type="hidden" name="user" value="{{user.id}}">
+            <button type="submit" class="btn btn-primary">Create a Group</button>
+        </form>
+    </div>
+    <div class="row">
+        <table class="table mb-0 thead-border-top-0">
+            <thead>
+                <tr>
+        
+                    <th>Group Name</th>
+        
+        
+                    <th style="width: 37px;">Status</th>
+                    <th style="width: 120px;">Last Activity</th>
+                    <th style="width: 51px;">Earnings</th>
+                    <th style="width: 24px;"></th>
+                </tr>
+            </thead>
+            <tbody class="list" id="staff02">
+                {% for groups in mygroups %}
+                    <tr>
+                        <td><a href="{% url 'article:gdetail' groups.id %}">{{groups.name}}</a></td>
+                    </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+.intro {
+  height: 500px;
+  background-color: red;
+  background: url("/static/assets/images/bg-image-6.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 5em 0;
+}
+.intro, p,h2{
+  color: #fff;
+}
+.intro h2{
+  padding-top: 100px;
+}
+.blue{
+  color: #0aadcb;
+}
+.icons svg{
+  width: 50px;
+  height: 50px;
+
+}

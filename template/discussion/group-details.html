@@ -1,0 +1,46 @@
+{% extends 'discussion/base.html' %}
+{% block content %}
+<div class="container-fluid page__container">
+    <h1 class="mb-4">Group Members of {{ group.name }}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header card-header-large bg-white d-flex align-items-center">
+                        <div class="flatpickr-wrapper flex">
+                            <h4>Suggest Users</h4>
+                        </div>
+                    </div>
+                    <div class="card-body py-0">
+                        <div class="list-group list-group-small list-group-flush">
+
+                            {% for suggested in suggested %}
+                            
+                            {% if suggested.profile.mycourse == user.profile.mycourse and suggested.username != user.username %}
+                                <div class="list-group-item d-flex align-items-center px-0">
+                                    <div class="mr-3 flex"> <i class="material-icons icon-18pt icon-muted">perm_identity</i>
+                                        {{suggested.username}} </div>
+                                    <div class="mr-3 text-dark-gray">{{suggested.profile.mycourse}}</div>
+                                    <div>
+                                        <form action="{% url 'article:add_friends' %}">
+                                            <input type="hidden" name="group" value="{{group.id}}">
+                                            <input type="hidden" name="members" value="{{suggested.id}}">
+                                            <input type="submit" value="Connect">
+                                        </form>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a class="text-muted" href="">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
